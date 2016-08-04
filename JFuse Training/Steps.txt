@@ -1,0 +1,19 @@
+	1. Change the location in FeatureFile.xml
+		a. ~\university-enrollment\target\university-enrollment-1.0.11-SNAPSHOT.jar
+	2. Copy univ.cfg to ~\jboss-fuse-6.2.0.redhat-133\etc
+	3. Start fuse
+	4. Enter  features:addurl file:C:/Users/subramanianb/Desktop/JBOSS_FUSE/FeatureFile.xml
+	5. Enter features:install example
+	6. Enter list
+		a. Not the jar should be in 'Started' state else enter list again
+		b. university-input & university-output folders will be created under ~\jboss-fuse-6.2.0.redhat-133
+	------- TESTING---------------
+	7. Add RESTClient plugin to FF or chorme
+	8. Enter http://127.0.0.1:1824/university?_wadl in browser
+		a. Populates xsd
+	9. Enter http://127.0.0.1:1824/university/universityEnrollment into RESTClient
+		a. Contentsettype = application/xml
+		b. Method=post
+		c. Copy paste the inputxml (EnrollmentInfo.xml)
+		d. Hit send
+		e. Now the input xml should be under jboss-fuse-6.2.0.redhat-133\university-output\request
